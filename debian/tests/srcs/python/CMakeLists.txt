@@ -1,5 +1,5 @@
-project(Boost CXX)
 cmake_minimum_required(VERSION 3.0)
+project(Boost CXX)
 
 FIND_PACKAGE(Python 3 REQUIRED COMPONENTS Interpreter Development)
 INCLUDE_DIRECTORIES( ${Python_INCLUDE_DIRS} )
