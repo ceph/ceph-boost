@@ -3,3 +3,4 @@
 116.patch
 fix-mpi-python37.patch
 fix_extension.patch
+0001-Remove-timestamps-and-dates-from-documentation.patch

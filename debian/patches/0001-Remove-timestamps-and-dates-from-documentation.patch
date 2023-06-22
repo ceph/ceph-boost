@@ -1,0 +1,89 @@
+From 7c9c189ea32470cd683939c11fabf78f0b2f3f17 Mon Sep 17 00:00:00 2001
+From: Vagrant Cascadian <vagrant@reproducible-builds.org>
+Date: Sat, 22 Apr 2023 19:53:22 -0700
+Subject: [PATCH] Remove timestamps and dates from documentation.
+
+https://reproducible-builds.org/docs/timestamps/
+---
+ libs/circular_buffer/doc/circular_buffer.qbk |  2 --
+ libs/units/doc/units.qbk                     |  1 -
+ tools/boostbook/xsl/html-base.xsl            | 22 --------------------
+ tools/quickbook/doc/block.qbk                |  4 ++--
+ 4 files changed, 2 insertions(+), 27 deletions(-)
+
+diff --git a/libs/circular_buffer/doc/circular_buffer.qbk b/libs/circular_buffer/doc/circular_buffer.qbk
+index a7177e4c..217c42b6 100644
+--- a/libs/circular_buffer/doc/circular_buffer.qbk
++++ b/libs/circular_buffer/doc/circular_buffer.qbk
+@@ -596,8 +596,6 @@ Paul A. Bristow refactored the documentation in 2013 to use the full power of Qu
+ 
+ [section:version_id Documentation Version Info]
+ 
+-Last edit to Quickbook file __FILENAME__ was at __TIME__ on __DATE__.
+-
+ [tip This should appear on the pdf version
+ (but may be redundant on a html version where the last edit date is on the first (home) page).]
+ 
+diff --git a/libs/units/doc/units.qbk b/libs/units/doc/units.qbk
+index 0c7345fc..b160ef21 100644
+--- a/libs/units/doc/units.qbk
++++ b/libs/units/doc/units.qbk
+@@ -1309,7 +1309,6 @@ the design and implementation of this library.
+ 
+ __boostroot
+ 
+-Last edit to Quickbook file __FILENAME__ was at __TIME__ on __DATE__.
+ 
+ [tip This should appear on the pdf version (but may be redundant on html).]
+ [/ Useful on pdf version. See also Last revised timestamp on first page of html version.]
+diff --git a/tools/boostbook/xsl/html-base.xsl b/tools/boostbook/xsl/html-base.xsl
+index a1031710..cfba8727 100644
+--- a/tools/boostbook/xsl/html-base.xsl
++++ b/tools/boostbook/xsl/html-base.xsl
+@@ -234,28 +234,6 @@ set       toc,title
+               <xsl:value-of
+                 select="normalize-space($revision-node/attribute::rev:last-revision)"/>
+             </xsl:variable>
+-            <xsl:if test="string-length($revision-text) &gt; 0 and not($revision-text = '$Date$')">
+-              <p>
+-                <small>
+-                  <xsl:text>Last revised: </xsl:text>
+-                  <xsl:choose>
+-                    <xsl:when test="not(contains($revision-text, '$Date: ')) and not(contains($revision-text, '$Date:: '))">
+-                      <xsl:value-of select="$revision-text"/>
+-                    </xsl:when>
+-                    <xsl:when test="contains($revision-text, '/')">
+-                      <xsl:call-template name="format.cvs.revision">
+-                        <xsl:with-param name="text" select="$revision-text"/>
+-                      </xsl:call-template>
+-                    </xsl:when>
+-                    <xsl:otherwise>
+-                      <xsl:call-template name="format.svn.revision">
+-                        <xsl:with-param name="text" select="$revision-text"/>
+-                      </xsl:call-template>
+-                    </xsl:otherwise>
+-                  </xsl:choose>
+-                </small>
+-              </p>
+-            </xsl:if>
+           </xsl:if>
+         </td>
+         <td align="right">
+diff --git a/tools/quickbook/doc/block.qbk b/tools/quickbook/doc/block.qbk
+index dbfdb8d2..bcf3f406 100644
+--- a/tools/quickbook/doc/block.qbk
++++ b/tools/quickbook/doc/block.qbk
+@@ -602,8 +602,8 @@ Quickbook has some predefined macros that you can already use.
+ 
+ [table Predefined Macros
+     [[Macro]           [Meaning]                       [Example]]
+-    [[[^\__DATE__]]    [Today's date]                  [__DATE__]]
+-    [[[^\__TIME__]]    [The current time]              [__TIME__]]
++    [[[^\__DATE__]]    [Today's date]                  [2022-04-20]]
++    [[[^\__TIME__]]    [The current time]              [01:42:48 PM]]
+     [[[^\__FILENAME__]][Quickbook source filename]     [__FILENAME__]]
+ ]
+ 
+-- 
+2.39.2
+
