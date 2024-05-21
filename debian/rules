@@ -151,7 +151,7 @@ BUILD_CONTEXT = no
 endif
 
 ifeq ($(DEB_BUILD_ARCH), arm64)
-JAM_OPT += pch=off
+JAM_OPT += pch=off boost.stacktrace.from_exception=off
 endif
 
 # if we're building with context, coroutine, fiber, add the libraries to the list
