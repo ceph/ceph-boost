@@ -1,5 +1,5 @@
-project(Boost CXX)
 cmake_minimum_required(VERSION 3.0)
+project(Boost CXX)
 
 FIND_PACKAGE(Boost COMPONENTS random REQUIRED)
 INCLUDE_DIRECTORIES (${Boost_INCLUDE_DIRS})

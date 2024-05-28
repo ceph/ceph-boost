@@ -1,3 +1,21 @@
+boost1.85 (1.85.0-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream
+
+ -- Adam Emerson <aemerson@redhat.com>  Thu, 11 May 2023 11:49:06 -0400
+
+boost1.82 (1.82.0-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Adapt tests for newer cmake version (Closes: #1036841)
+  * Add dependency on libboost-json1.81-dev from libboost1.81-all-dev (Closes:
+    #1037155)
+  * Add patch from Vagrant Cascadian to make documentation build reproducible
+    (Closes: #1035027)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 19 Jun 2023 15:32:59 +0200
+
 boost1.82 (1.82.0-1.1) unstable; urgency=medium
 
   * Non-maintainer upload.

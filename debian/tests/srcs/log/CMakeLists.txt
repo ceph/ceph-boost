@@ -1,5 +1,5 @@
-project(Boost CXX)
 cmake_minimum_required(VERSION 3.0)
+project(Boost CXX)
 
 FIND_PACKAGE(Boost COMPONENTS log log_setup REQUIRED)
 INCLUDE_DIRECTORIES (${Boost_INCLUDE_DIRS})
